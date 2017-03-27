@@ -18,7 +18,7 @@ echo "cd companionService && lxterminal -e npm start" >> $FILE
 echo "sleep 10" >> $FILE
 echo "cd ~/Desktop/alexa-avs-sample-app/samples" >> $FILE
 echo "cd javaclient && lxterminal -e mvn exec:exec" >> $FILE
-echo "sleep 70" >> $FILE
+echo "sleep 40" >> $FILE
 echo "cd ~/Desktop/alexa-avs-sample-app/samples" >> $FILE
 echo "cd wakeWordAgent/src && lxterminal -e ./wakeWordAgent -e kitt_ai" >> $FILE
 # Setting permission to execute the file
