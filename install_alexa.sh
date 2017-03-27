@@ -2,7 +2,7 @@
 # This script installs Amazon Alexa on raspberry pi 3 using 2017-03-02-raspbian-jessie
 # Clonning the alexa repository
 cd ~/Desktop
-git clone https://github.com/alexa/alexa-avs-sample-app.git
+git clone https://github.com/ckakiuchi/alexa-avs-sample-app.git
 # Fixing error for portaudio and including patch
 cd ~/Desktop/alexa-avs-sample-app
 sed -i "s_git clone https://github.com/Kitt-AI/snowboy.git_&\n\necho '========== Getting patch for Kitt-Ai ==========='\nmkdir -p snowboy/examples/C++/patches/ \&\& cd snowboy/examples/C++/patches/\nwget https://raw.githubusercontent.com/Kitt-AI/snowboy/10b53585407061ab72886a2c5b8542edc02364dc/examples/C%2B%2B/patches/portaudio.patch_" automated_install.sh
