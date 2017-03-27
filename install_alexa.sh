@@ -1395,6 +1395,8 @@ EOF
 	# Validate and Compile Java Changes
 	cd ~/Desktop/alexa-avs-sample-app/samples/javaclient/
 	mvn validate && mvn install
+	# Including autostart on boot
+	sudo sed -i "s_exit 0_'~/Desktop/StartAlexa.sh'\n&_" /etc/rc.local
 }
 
 echo "Do you wish to make and AutoStart Alexa?"
