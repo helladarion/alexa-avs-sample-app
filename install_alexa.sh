@@ -1414,6 +1414,9 @@ EOF
 	xdotool type ~/Desktop/StartAlexa.sh
 	xdotool key KP_Enter
 EOF
+	# Making your macro executable
+	chmod +x /home/pi/alexa_macro.sh
+	# Including the macro to be executed after login to LXDE
 	sudo echo "@/home/pi/alexa_macro.sh" >> ~/.config/lxsession/LXDE-pi/autostart
 }
 
