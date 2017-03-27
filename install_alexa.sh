@@ -1396,7 +1396,25 @@ EOF
 	cd ~/Desktop/alexa-avs-sample-app/samples/javaclient/
 	mvn validate && mvn install
 	# Including autostart on boot
-	sudo sed -i "s_exit 0_'~/Desktop/StartAlexa.sh'\n&_" /etc/rc.local
+	# Installing xdotool for simulate user activity
+	sudo apt-get install -y xdotool
+	# Creating macro script 
+	cat << "EOF" | tee alexa_macro.sh
+	#allow it to boot up completely
+	xdotool sleep 10
+	export XAUTHORITY=/home/pi/.Xauthority
+	export DISPLAY=:0.0
+	# move mouse to position of lxterminal icon
+	xdotool mousemove 150 20
+	# click to open lxterminal
+	xdotool mousedown 1
+	# wait for it to open
+	xdotool sleep 5
+	# run the first script
+	xdotool type ~/Desktop/StartAlexa.sh
+	xdotool key KP_Enter
+EOF
+	sudo echo "@/home/pi/alexa_macro.sh" >> ~/.config/lxsession/LXDE-pi/autostart
 }
 
 echo "Do you wish to make and AutoStart Alexa?"
