@@ -1399,7 +1399,7 @@ EOF
 	# Installing xdotool for simulate user activity
 	sudo apt-get install -y xdotool
 	# Creating macro script 
-	cat << "EOF" | tee alexa_macro.sh
+	cat << "EOF" | tee /home/pi/alexa_macro.sh
 	#allow it to boot up completely
 	xdotool sleep 10
 	export XAUTHORITY=/home/pi/.Xauthority
