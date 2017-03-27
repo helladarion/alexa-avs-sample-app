@@ -101,8 +101,8 @@ function autoAlexa {
 	});
 EOF
 
-sed -i "s/INSERT_EMAIL_HERE/`$email`/" auth_automater.js
-sed -i "s/INSERT_PASSWORD_HERE/`$passwd`/" auth_automater.js
+sed -i "s/INSERT_EMAIL_HERE/$email/" auth_automater.js
+sed -i "s/INSERT_PASSWORD_HERE/$passwd/" auth_automater.js
 	# -------
 	cd ~/Desktop/alexa-avs-sample-app
 	cd samples/companionService/
